@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/**
+ * Studioforty9 Carousel
+ *
+ * @category  Studioforty9
+ * @package   Studioforty9_Carousel
+ * @author    StudioForty9 <info@studioforty9.com>
+ * @copyright 2015 StudioForty9 (http://www.studioforty9.com)
+ * @license   https://github.com/studioforty9/carousel/blob/master/LICENCE BSD
+ * @version   1.0.0
+ * @link      https://github.com/studioforty9/carousel
+ */
+-->
+<layout>
+
+    <adminhtml_carousel_slider_index>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>studioforty9/carousel/js/position.js</name></action>
+        </reference>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>studioforty9_carousel/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="studioforty9_carousel/adminhtml_slider" name="slider"/>
+        </reference>
+    </adminhtml_carousel_slider_index>
+
+    <adminhtml_carousel_slider_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="studioforty9_carousel/adminhtml_slider_grid" name="slider.grid"/>
+        </block>
+    </adminhtml_carousel_slider_grid>
+
+    <adminhtml_carousel_slider_slidetab>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="studioforty9_carousel/adminhtml_slider_edit_tab_grid" name="slider.slidegrid"/>
+            <block type="adminhtml/widget_grid_serializer" name="slider.slidegrid.serializer">
+                <reference name="slider.slidegrid.serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>slider.slidegrid</grid_block_name>
+                        <data_callback>getSelectedSlides</data_callback>
+                        <hidden_input_name>slide_ids</hidden_input_name>
+                        <reload_param_name>slide_selected</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>grid_position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_carousel_slider_slidetab>
+
+    <adminhtml_carousel_slider_slidegrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="studioforty9_carousel/adminhtml_slider_edit_tab_grid" name="slider.slidegrid"/>
+        </block>
+    </adminhtml_carousel_slider_slidegrid>
+
+    <!-- Carousel Add/Edit Action -->
+    <adminhtml_carousel_slider_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>studioforty9/carousel/position.js</name></action>
+        </reference>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>studioforty9_carousel/slider</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="studioforty9_carousel/adminhtml_slider_edit" name="slider_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="studioforty9_carousel/adminhtml_slider_edit_tabs" name="slider_tabs"></block>
+        </reference>
+    </adminhtml_carousel_slider_edit>
+
+    <!-- -->
+
+    <adminhtml_carousel_slide_index>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>studioforty9/carousel/position.js</name></action>
+        </reference>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>studioforty9_carousel/slide</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="studioforty9_carousel/adminhtml_slide" name="slide"/>
+        </reference>
+    </adminhtml_carousel_slide_index>
+
+    <adminhtml_carousel_slide_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="studioforty9_carousel/adminhtml_slide_grid" name="slide_grid"/>
+        </block>
+    </adminhtml_carousel_slide_grid>
+
+    <!-- Slide Add/Edit Action -->
+    <adminhtml_carousel_slide_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>studioforty9_carousel/slide</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="studioforty9_carousel/adminhtml_slide_edit" name="slide_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="studioforty9_carousel/adminhtml_slide_edit_tabs" name="slide_tabs"></block>
+        </reference>
+    </adminhtml_carousel_slide_edit>
+
+</layout>

@@ -1,0 +1,8 @@
+app/code/community/Studioforty9/Carousel app/code/community/Studioforty9/Carousel
+app/design/adminhtml/default/default/layout/studioforty9_carousel.xml app/design/adminhtml/default/default/layout/studioforty9_carousel.xml
+app/design/frontend/base/default/layout/studioforty9_carousel.xml app/design/frontend/base/default/layout/studioforty9_carousel.xml
+app/design/frontend/base/default/template/studioforty9/carousel app/design/frontend/base/default/template/studioforty9/carousel
+app/etc/modules/Studioforty9_Carousel.xml app/etc/modules/Studioforty9_Carousel.xml
+app/locale/en_US/Studioforty9_Carousel.csv app/locale/en_US/Studioforty9_Carousel.csv
+skin/frontend/base/default/studioforty9/carousel skin/frontend/base/default/studioforty9/carousel
+media/carousel/ media/carousel/

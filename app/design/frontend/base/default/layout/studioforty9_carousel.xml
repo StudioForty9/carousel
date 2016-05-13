@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Studioforty9 Carousel
+ *
+ * @category  Studioforty9
+ * @package   Studioforty9_Carousel
+ * @author    StudioForty9 <info@studioforty9.com>
+ * @copyright 2015 StudioForty9 (http://www.studioforty9.com)
+ * @license   https://github.com/studioforty9/carousel/blob/master/LICENCE BSD
+ * @version   1.0.0
+ * @link      https://github.com/studioforty9/carousel
+-->
+<layout version="0.1.0">
+
+    <default>
+        <reference name="head">
+            <action method="addItem" ifconfig="studioforty9_carousel/settings/enabled">
+                <type>skin_css</type>
+                <script>studioforty9/carousel/fotorama.css</script>
+            </action>
+            <action method="addItem" ifconfig="studioforty9_carousel/settings/enabled">
+                <type>skin_css</type>
+                <script>studioforty9/carousel/carousel.css</script>
+            </action>
+            <action method="addItem" ifconfig="studioforty9_carousel/settings/enabled">
+                <type>skin_js</type>
+                <script>studioforty9/carousel/fotorama.js</script>
+            </action>
+            <action method="addItem" ifconfig="studioforty9_carousel/settings/enabled">
+                <type>skin_js</type>
+                <script>studioforty9/carousel/carousel.js</script>
+            </action>
+        </reference>
+    </default>
+    
+    <!--cms_index_index>
+        <reference name="content">
+            
+            <block type="studioforty9_carousel/slide_view" name="studioforty9.carousel.homepage" template="studioforty9/carousel/default.phtml">
+                <action method="setSliderId"><value>1</value></action>
+            </block>
+            
+        </reference>
+    </cms_index_index-->
+    
+
+</layout>

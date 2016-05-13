@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Studioforty9 Carousel
+ *
+ * @category  Studioforty9
+ * @package   Studioforty9_Carousel
+ * @author    StudioForty9 <info@studioforty9.com>
+ * @copyright 2015 StudioForty9 (http://www.studioforty9.com)
+ * @license   https://github.com/studioforty9/carousel/blob/master/LICENCE BSD
+ * @version   1.0.0
+ * @link      https://github.com/studioforty9/carousel
+ */
+-->
+<config>
+    <modules>
+        <Studioforty9_Carousel>
+            <version>1.0.0</version>
+        </Studioforty9_Carousel>
+    </modules>
+    <global>
+        <models>
+            <studioforty9_carousel>
+                <class>Studioforty9_Carousel_Model</class>
+                <resourceModel>studioforty9_carousel_resource</resourceModel>
+            </studioforty9_carousel>
+            <studioforty9_carousel_resource>
+                <class>Studioforty9_Carousel_Model_Resource</class>
+                <entities>
+                    <carousel_slider>
+                        <table>studioforty9_carousel_slider</table>
+                    </carousel_slider>
+                    <carousel_slider_store>
+                        <table>studioforty9_carousel_slider_store</table>
+                    </carousel_slider_store>
+                    <carousel_slide>
+                        <table>studioforty9_carousel_slide</table>
+                    </carousel_slide>
+                    <carousel_slide_store>
+                        <table>studioforty9_carousel_slide_store</table>
+                    </carousel_slide_store>
+                    <carousel_slider_slide>
+                        <table>studioforty9_carousel_slider_slide</table>
+                    </carousel_slider_slide>
+                </entities>
+            </studioforty9_carousel_resource>
+        </models>
+        <blocks>
+            <studioforty9_carousel>
+                <class>Studioforty9_Carousel_Block</class>
+            </studioforty9_carousel>
+            <studioforty9_carousel_adminhtml>
+                <class>Studioforty9_Carousel_Block_Adminhtml</class>
+            </studioforty9_carousel_adminhtml>
+        </blocks>
+        <helpers>
+            <studioforty9_carousel>
+                <class>Studioforty9_Carousel_Helper</class>
+            </studioforty9_carousel>
+        </helpers>
+        <resources>
+            <studioforty9_carousel_setup>
+                <setup>
+                    <module>Studioforty9_Carousel</module>
+                </setup>
+            </studioforty9_carousel_setup>
+        </resources>
+        <rewrite>
+            <slider_url>
+                <from><![CDATA[#^/carousel/slider/(.*)/#]]></from>
+                <to><![CDATA[carousel/index/slider/url_key/$1/]]></to>
+                <complete>1</complete>
+            </slider_url>
+            <slide_url>
+                <from><![CDATA[#^/carousel/slide/(.*)/#]]></from>
+                <to><![CDATA[carousel/index/slide/url_key/$1/]]></to>
+                <complete>1</complete>
+            </slide_url>
+        </rewrite>
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <studioforty9_carousel>
+                    <file>studioforty9_carousel.xml</file>
+                </studioforty9_carousel>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <Studioforty9_Carousel>
+                    <files>
+                        <default>Studioforty9_Carousel.csv</default>
+                    </files>
+                </Studioforty9_Carousel>
+            </modules>
+        </translate>
+    </adminhtml>
+
+    <frontend>
+        <routers>
+            <studioforty9_carousel>
+                <use>standard</use>
+                <args>
+                    <module>Studioforty9_Carousel</module>
+                    <frontName>carousel</frontName>
+                </args>
+            </studioforty9_carousel>
+        </routers>
+        <layout>
+            <updates>
+                <studioforty9_carousel>
+                    <file>studioforty9_carousel.xml</file>
+                </studioforty9_carousel>
+            </updates>
+        </layout>
+        <translate>
+            <modules>
+                <studioforty9_carousel>
+                    <files>
+                        <default>Studioforty9_Carousel.csv</default>
+                    </files>
+                </studioforty9_carousel>
+            </modules>
+        </translate>
+    </frontend>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <use>admin</use>
+                <args>
+                    <modules>
+                        <Studioforty9_Carousel after="Mage_Adminhtml">Studioforty9_Carousel_Adminhtml</Studioforty9_Carousel>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <default>
+        <studioforty9_carousel>
+            <default>
+                <breadcrumbs>1</breadcrumbs>
+                <uselink>1</uselink>
+                <link>Carousel</link>
+            </default>
+            <seo>
+                <title>Carousel</title>
+                <keywords></keywords>
+                <description></description>
+            </seo>
+            <slider>
+                <perpage>15,30,50,100</perpage>
+            </slider>
+            <slide>
+                <perpage>15,30,50,100</perpage>
+            </slide>
+        </studioforty9_carousel>
+    </default>
+
+    <!--
+    PHPUnit Configuration
+    -->
+    <phpunit>
+        <suite>
+            <modules>
+                <Studioforty9_Carousel/>
+            </modules>
+        </suite>
+    </phpunit>
+
+</config>

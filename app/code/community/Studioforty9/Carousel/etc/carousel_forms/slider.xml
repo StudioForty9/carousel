@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+/**
+ * Studioforty9 Carousel
+ *
+ * @category  Studioforty9
+ * @package   Studioforty9_Carousel
+ * @author    StudioForty9 <info@studioforty9.com>
+ * @copyright 2015 StudioForty9 (http://www.studioforty9.com)
+ * @license   https://github.com/studioforty9/carousel/blob/master/LICENCE BSD
+ * @version   1.0.0
+ * @link      https://github.com/studioforty9/carousel
+ */
+-->
+<form>
+    <fieldset id="content">
+        <legend>Slider Content</legend>
+        <fields>
+            <field translate="label">
+                <name>name</name>
+                <input>text</input>
+                <label>Name</label>
+                <class>required-entry</class>
+                <required>true</required>
+            </field>
+            <field>
+                <name>status</name>
+                <input>select</input>
+                <label>Status</label>
+                <class>required-entry</class>
+                <required>true</required>
+                <values helper="studioforty9_carousel/source::getSliderStatusOptions"/>
+            </field>
+            <field>
+                <name>position</name>
+                <input>text</input>
+                <label>Position</label>
+                <class>required-entry validate-number</class>
+                <required>true</required>
+                <style>width: 60px</style>
+            </field>
+        </fields>
+    </fieldset>
+    <fieldset id="design">
+        <legend>Slider Design</legend>
+        <fields>
+            <field translate="note label">
+                <name>arrows</name>
+                <input>select</input>
+                <label>Show Arrows</label>
+                <class></class>
+                <required>false</required>
+                <note>Turns on navigation arrows over the slides.</note>
+                <options>
+                    <option><label>Only on Hover</label><value>true</value></option>
+                    <option><label>Never</label><value>false</value></option>
+                    <option><label>Always</label><value>always</value></option>
+                </options>
+            </field>
+            <field translate="note label">
+                <name>click</name>
+                <input>select</input>
+                <label>Allow click to slide</label>
+                <class></class>
+                <required>false</required>
+                <value>false</value>
+                <note>Moving between slides by clicking.</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>swipe</name>
+                <input>select</input>
+                <label>Allow swipe to slide</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Moving between slides by swiping.</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>trackpad</name>
+                <input>select</input>
+                <label>Allow trackpad</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Enables controlling the slider via the trackpad and/or horizontal mouse wheel.</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>shadows</name>
+                <input>select</input>
+                <label>Show shadows</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow shadows on the slider container.</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>fullscreen</name>
+                <input>select</input>
+                <label>Show fullscreen toggle button</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow the fullscreen toggle button to be displayed.</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>glimpse</name>
+                <input>select</input>
+                <label>Allow glimpse</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow the slider to glimpse previous and next slides</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                    <option><label>Specify Pixels</label><value>specify</value></option>
+                </options>
+            </field>
+            <field>
+                <name>keyboard</name>
+                <input>select</input>
+                <label>Allow key control</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow key presses to control the slider</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>loop</name>
+                <input>select</input>
+                <label>Allow looping</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow the slider to loop when it reaches the first or last slide</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>hash</name>
+                <input>select</input>
+                <label>Allow history</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow the slider to remember a slide by keeping the index in the URL e.g. /#2</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>autoplay</name>
+                <input>select</input>
+                <label>Allow autoplay</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow the slider to automatically start when the page loads</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                    <option><label>Specify Duration</label><value>specify</value></option>
+                </options>
+            </field>
+            <field>
+                <name>stopautoplayontouch</name>
+                <input>select</input>
+                <label>Allow stop on touch</label>
+                <class></class>
+                <required>false</required>
+                <value>0</value>
+                <note>Allow the slider to stop when the user interacts with the slider controls</note>
+                <options>
+                    <option><label>Yes</label><value>true</value></option>
+                    <option><label>No</label><value>false</value></option>
+                </options>
+            </field>
+            <field>
+                <name>nav</name>
+                <input>select</input>
+                <label>Navigation type</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><label>Dots</label><value>dots</value></option>
+                    <option><label>Thumbnails</label><value>thumbs</value></option>
+                </options>
+            </field>
+            <field>
+                <name>thumbfit</name>
+                <input>select</input>
+                <label>Thumbnail fit</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><label>None</label><value>none</value></option>
+                    <option><label>Cover</label><value>cover</value></option>
+                    <option><label>Contain</label><value>contain</value></option>
+                    <option><label>Scale Down</label><value>scaledown</value></option>
+                </options>
+            </field>
+            <field>
+                <name>navposition</name>
+                <input>select</input>
+                <label>Navigation position</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><label>None</label><value>none</value></option>
+                    <option><label>Bottom</label><value>bottom</value></option>
+                    <option><label>Top</label><value>top</value></option>
+                </options>
+            </field>
+            <field>
+                <name>width</name>
+                <input>text</input>
+                <label>Slider width</label>
+                <class></class>
+                <required>false</required>
+                <note>Stage container width in pixels or percent.</note>
+            </field>
+            <field>
+                <name>minwidth</name>
+                <input>text</input>
+                <label>Slider minimum width</label>
+                <class></class>
+                <required>false</required>
+            </field>
+            <field>
+                <name>maxwidth</name>
+                <input>text</input>
+                <label>Slider max width</label>
+                <class></class>
+                <required>false</required>
+            </field>
+            <field>
+                <name>minheight</name>
+                <input>text</input>
+                <label>Slider minimum height</label>
+                <class></class>
+                <required>false</required>
+            </field>
+            <field>
+                <name>maxheight</name>
+                <input>text</input>
+                <label>Slider max height</label>
+                <class></class>
+                <required>false</required>
+            </field>
+            <field>
+                <name>ratio</name>
+                <input>text</input>
+                <label>Slider ratio</label>
+                <class></class>
+                <required>false</required>
+            </field>
+            <field>
+                <name>transition</name>
+                <input>select</input>
+                <label>Default Transition</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><label>Slide</label><value>slide</value></option>
+                    <option><label>Cross Fade</label><value>crossfade</value></option>
+                    <option><label>Dissolve</label><value>dissolve</value></option>
+                </options>
+            </field>
+            <field>
+                <name>clicktransition</name>
+                <input>select</input>
+                <label>Click transition</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><label>Slide</label><value>slide</value></option>
+                    <option><label>Cross Fade</label><value>crossfade</value></option>
+                    <option><label>Dissolve</label><value>dissolve</value></option>
+                </options>
+            </field>
+            <field>
+                <name>transitionduration</name>
+                <input>text</input>
+                <label>Transition duration</label>
+                <class></class>
+                <required>false</required>
+                <value>250</value>
+            </field>
+        </fields>
+    </fieldset>
+</form>

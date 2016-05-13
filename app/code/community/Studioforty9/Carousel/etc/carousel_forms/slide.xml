@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+/**
+ * Studioforty9 Carousel
+ *
+ * @category  Studioforty9
+ * @package   Studioforty9_Carousel
+ * @author    StudioForty9 <info@studioforty9.com>
+ * @copyright 2015 StudioForty9 (http://www.studioforty9.com)
+ * @license   https://github.com/studioforty9/carousel/blob/master/LICENCE BSD
+ * @version   1.0.0
+ * @link      https://github.com/studioforty9/carousel
+ */
+-->
+<form>
+    <fieldset id="content">
+        <legend>Slide Content</legend>
+        <fields>
+            <field>
+                <input>text</input>
+                <label>Title</label>
+                <class>required-entry</class>
+                <required>true</required>
+                <name>title</name>
+            </field>
+            <field>
+                <input>image</input>
+                <name>image_desktop</name>
+                <label>Desktop Image</label>
+                <required>true</required>
+            </field>
+            <field>
+                <input>image</input>
+                <name>image_tablet</name>
+                <label>Tablet Image</label>
+            </field>
+            <field>
+                <input>image</input>
+                <name>image_phone</name>
+                <label>Phone Image</label>
+            </field>
+            <field>
+                <input>editor</input>
+                <name>summary</name>
+                <label>Slide Text</label>
+                <title>Slide Text</title>
+                <style>width:260px; height:100px;</style>
+                <wysiwyg>false</wysiwyg>
+                <required>false</required>
+            </field>
+            <field>
+                <input>text</input>
+                <label>Click-through Link</label>
+                <class></class>
+                <required>false</required>
+                <name>link</name>
+            </field>
+            <field>
+                <input>text</input>
+                <label>Click-through Text</label>
+                <class></class>
+                <required>false</required>
+                <name>link_text</name>
+            </field>
+            <field>
+                <input>select</input>
+                <label>Status</label>
+                <name>status</name>
+                <class>required_entry</class>
+                <values helper="studioforty9_carousel/source::getSlideStatusOptions"/>
+                <required>true</required>
+            </field>
+            <field>
+                <name>slider_ids</name>
+                <note>The sliders to attach to.</note>
+                <input>multiselect</input>
+                <label>Slider</label>
+                <required>false</required>
+                <values helper="studioforty9_carousel/source::getSliderMultiselectOptions"/>
+            </field>
+        </fields>
+    </fieldset>
+    <fieldset id="design">
+        <legend>Slide Design</legend>
+        <fields>
+            <field>
+                <name>color</name>
+                <input>text</input>
+                <label>Background Color</label>
+                <class></class>
+                <required>false</required>
+                <value>#000000</value>
+            </field>
+            <field>
+                <name>theme</name>
+                <input>select</input>
+                <label>Theme</label>
+                <class></class>
+                <required>false</required>
+                <value>light</value>
+                <options>
+                    <option><label>Light</label><value>light</value></option>
+                    <option><label>Dark</label><value>dark</value></option>
+                </options>
+            </field>
+            <field>
+                <name>position</name>
+                <input>select</input>
+                <label>Position</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><value>top_left</value><label>Top Left</label></option>
+                    <option><value>top_center</value><label>Top Center</label></option>
+                    <option><value>top_right</value><label>Top Right</label></option>
+                    <option><value>mid_left</value><label>Middle Left</label></option>
+                    <option><value>mid_center</value><label>Middle Center</label></option>
+                    <option><value>mid_right</value><label>Middle Right</label></option>
+                    <option><value>bottom_left</value><label>Bottom Left</label></option>
+                    <option><value>bottom_center</value><label>Bottom Center</label></option>
+                    <option><value>bottom_right</value><label>Bottom Right</label></option>
+                </options>
+            </field>
+            <field>
+                <name>caption</name>
+                <input>select</input>
+                <label>Show Caption</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><label>No</label><value>false</value></option>
+                    <option><label>Yes</label><value>true</value></option>
+                </options>
+            </field>
+            <field>
+                <name>fit</name>
+                <input>select</input>
+                <label>Fit Style</label>
+                <class></class>
+                <required>false</required>
+                <options>
+                    <option><value>cover</value><label>Cover</label></option>
+                    <option><value>contain</value><label>Contain</label></option>
+                    <option><value>scaledown</value><label>Scale Down</label></option>
+                    <option><value>none</value><label>None</label></option>
+                </options>
+            </field>
+        </fields>
+    </fieldset>
+</form>

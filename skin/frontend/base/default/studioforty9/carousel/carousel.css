@@ -1,0 +1,167 @@
+
+body.cms-home .main-container {
+    padding: 0;
+    max-width: 1200px;
+}
+
+.carousel {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-textarea-container {
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .carousel-textarea-container {
+        width: 100%;
+    }
+}
+@media (min-width: 768px) and (max-width: 959px) {
+    .carousel-textarea-container {
+        width: 50%;
+    }
+}
+@media (min-width: 960px) {
+    .carousel-textarea-container {
+        width: 30%;
+    }
+}
+
+.carousel-textarea {
+    cursor: pointer;
+    display: table-cell;
+    padding: 15px;
+}
+@media (max-width: 480px) {
+    .carousel-textarea {}
+}
+@media (min-width: 480px) and (max-width: 959px) {
+    .carousel-textarea {}
+}
+.carousel-textarea:hover {
+    text-decoration: none;
+}
+.carousel-textarea:hover .carousel-heading {
+    text-decoration: none;
+}
+.carousel-textarea:hover .carousel-text {
+    text-decoration: none;
+}
+.carousel-textarea:hover .carousel-button {
+    text-decoration: none;
+}
+
+.carousel-heading {
+    cursor: pointer;
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 15px;
+    text-decoration: none;
+}
+.carousel-text {
+    cursor: pointer;
+    display: block;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0;
+    padding-bottom: 15px;
+    text-decoration: none;
+}
+.carousel-button {
+    padding: 5px 10px;
+}
+
+.light .carousel-heading {
+    color: rgba(0,0,0,1);
+}
+.light .carousel-text {
+    color: rgba(0,0,0,1);
+}
+.light .carousel-button {
+    background-color: transparent;
+    border: 2px solid rgba(0,0,0,1);
+    color: rgba(0,0,0,1);
+    font-weight: bold;
+}
+.light .carousel-button:hover {
+    background-color: rgba(0,0,0,1);
+    border: 2px solid rgba(0,0,0,1);
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+}
+
+.dark .carousel-heading {
+    color: rgba(255,255,255,1);
+}
+.dark .carousel-text {
+    color: rgba(255,255,255,1);
+}
+.dark .carousel-button {
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,1);
+    color: rgba(255,255,255,1);
+    font-weight: bold;
+}
+.dark .carousel-button:hover {
+    background-color: rgba(255,255,255,1);
+    border: 2px solid rgba(255,255,255,1);
+    color: rgba(0,0,0,1);
+    text-decoration: none;
+}
+
+
+.carousel-textarea.top_left {
+    vertical-align: top;
+    text-align: left;
+}
+
+.carousel-textarea.top_center {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: top;
+    text-align: center;
+}
+
+.carousel-textarea.top_right {
+    vertical-align: top;
+    text-align: right;
+}
+
+.carousel-textarea.mid_left {
+    vertical-align: middle;
+    text-align: left;
+}
+
+.carousel-textarea.mid_center {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.carousel-textarea.mid_right {
+    vertical-align: middle;
+    text-align: right;
+}
+
+.carousel-textarea.bottom_left {
+    vertical-align: bottom;
+    text-align: left;
+}
+
+.carousel-textarea.bottom_center {
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: bottom;
+    text-align: center;
+}
+
+.carousel-textarea.bottom_right {
+    vertical-align: bottom;
+    text-align: right;
+}

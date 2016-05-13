@@ -1,0 +1,46 @@
+<?php
+/**
+ * Studioforty9 Carousel
+ *
+ * @category  Studioforty9
+ * @package   Studioforty9_Carousel
+ * @author    StudioForty9 <info@studioforty9.com>
+ * @copyright 2015 StudioForty9 (http://www.studioforty9.com)
+ * @license   https://github.com/studioforty9/carousel/blob/master/LICENCE BSD
+ * @version   1.0.0
+ * @link      https://github.com/studioforty9/carousel
+ */
+/** @var Studioforty9_Carousel_Block_Slider_View $this */
+/** @var Studioforty9_Carousel_Model_Slider $_slider */
+$_slider = $this->getSlider();
+$_slides = $this->getSlides();
+$_slidesCount = count($_slides);
+?>
+
+<?php if ($_slidesCount > 0): ?>
+<div class="fotorama" data-auto="false" <?php echo $_slider->getDesignOptions() ?>>
+    <?php /** @var Studioforty9_Carousel_Model_Slide $_slide */ ?>
+    <?php foreach ($_slides as $_slide): ?>
+        <div
+            data-caption="false"
+            data-fit="cover"
+            data-img="<?php echo $_slide->getDesktopImageUrl() ?>"
+            data-img-tablet="<?php echo $_slide->getTabletImageUrl() ?>"
+            data-img-phone="<?php echo $_slide->getPhoneImageUrl() ?>"
+            class="carousel <?php echo $_slide->getDesignObject()->getTheme(); ?>"
+            title="<?php echo $_slide->getTitle(); ?>"
+        >
+
+            <a href="<?php echo $_slide->getLink(); ?>" class="carousel-textarea <?php echo $_slide->getDesignObject()->getPosition() ?>">
+    <span class="carousel-textarea-container">
+        <span class="carousel-heading"><?php echo $_slide->getTitle() ?></span>
+        <span class="carousel-text"><?php echo $_slide->getSummary()?></span>
+        <span class="carousel-button button"><?php echo 'Shop Now' ?></span>
+    </span>
+            </a>
+
+        </div>
+    <?php endforeach; ?>
+
+</div>
+<?php endif; ?>
