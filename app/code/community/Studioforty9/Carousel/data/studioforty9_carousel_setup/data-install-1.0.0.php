@@ -41,7 +41,7 @@ try {
             'maxheight' => '400',
             'transition' => 'slide',
             'clicktransition' => 'slide',
-            'transitionduration' => '4000'
+            'transitionduration' => '400'
         ),
     );
 
